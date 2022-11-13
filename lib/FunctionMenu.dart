@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:testfun_project/Config.dart';
+import 'package:testfun_project/Image/Easy_Image_Viewer.dart';
+import 'package:testfun_project/Share/Share_test.dart';
 import 'package:testfun_project/Youtube/YoutubeAppDemo.dart';
 import 'package:testfun_project/Youtube/YoutubePlayerPage.dart';
 import 'package:testfun_project/Youtube/YoutubeTest.dart';
@@ -59,6 +61,8 @@ class FunctionMenuState extends State<FunctionMenu> {
                 Item("1. YouTubeThumnail", YoutubeTest()),
                 Item("2. YouTubeInfo", YoutubePlayerPage(videoId: "")),
                 Item("3. YouTubePlayer", YoutubeAppDemo()),
+                Item("4. Easy Image Viewer", Easy_Image_Viewer()),
+                Item("5. Share test", Share_test()),
               ],
             ),
           ),
