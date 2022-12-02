@@ -47,6 +47,8 @@ dependencies:
   image_picker: ^0.8.5
   image_preview: ^1.0.1
   file_selector: ^0.9.2+2
+  # excel
+  syncfusion_flutter_xlsio: ^20.3.52
 
 dev_dependencies:
   flutter_test:
