@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:testfun_project/Config.dart';
+import 'package:testfun_project/Excel/Excel_test.dart';
 import 'package:testfun_project/Image/Easy_Image_Viewer.dart';
 import 'package:testfun_project/Share/Share_test.dart';
 import 'package:testfun_project/Youtube/YoutubeAppDemo.dart';
@@ -63,6 +64,7 @@ class FunctionMenuState extends State<FunctionMenu> {
                 Item("3. YouTubePlayer", YoutubeAppDemo()),
                 Item("4. Easy Image Viewer", Easy_Image_Viewer()),
                 Item("5. Share test", Share_test()),
+                Item("6. Excel test", CreateExcelStatefulWidget(title: "test excel")),
               ],
             ),
           ),
@@ -85,6 +87,25 @@ class FunctionMenuState extends State<FunctionMenu> {
           Navigator.push(context, MaterialPageRoute(builder: (context) => _fn));
         },
       )
+    );
+  }
+
+  fun_Item(String page_name, Function? _fn){
+    return Container(
+        padding: EdgeInsets.only(bottom: 10),
+        child: InkWell(
+          child: Container(
+            padding: EdgeInsets.only(left: 10),
+            color: Colors.black12,
+            width: full_w, height: 40, alignment: Alignment.centerLeft,
+            child: Text(page_name, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),),
+          ),
+          onTap: (){
+            if(_fn != null){
+              _fn();
+            }
+          },
+        )
     );
   }
 
