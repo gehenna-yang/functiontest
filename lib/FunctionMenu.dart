@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:testfun_project/Config.dart';
+import 'package:testfun_project/DynamicLink/Dynamiclinks_test.dart';
 import 'package:testfun_project/Excel/Excel_test.dart';
 import 'package:testfun_project/Image/Easy_Image_Viewer.dart';
 import 'package:testfun_project/Share/Share_test.dart';
@@ -65,6 +66,7 @@ class FunctionMenuState extends State<FunctionMenu> {
                 Item("4. Easy Image Viewer", Easy_Image_Viewer()),
                 Item("5. Share test", Share_test()),
                 Item("6. Excel test", CreateExcelStatefulWidget(title: "test excel")),
+                Item("7. Dynamic test", Dynamiclinks_test()),
               ],
             ),
           ),

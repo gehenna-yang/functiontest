@@ -55,6 +55,7 @@ dependencies:
   # dynamic links
   firebase_core: ^2.1.1
   firebase_dynamic_links: ^5.0.4
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   flutter_test:

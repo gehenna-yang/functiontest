@@ -49,7 +49,7 @@ class _CreateExcelState extends State<CreateExcelStatefulWidget> {
                 backgroundColor: Colors.lightBlue,
               ),
               onPressed: generateExcel,
-              child: const Text('Generate Excel'),
+              child: const Text('Generate Excel', style: TextStyle(color: Colors.white),),
             )
           ],
         ),

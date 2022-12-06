@@ -1,7 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:testfun_project/FunctionMenu.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  // iOS requires you run in release mode to test dynamic links ("flutter run --release").
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
