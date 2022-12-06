@@ -52,6 +52,9 @@ dependencies:
   syncfusion_flutter_xlsio: ^20.3.52
   path_provider: ^2.0.11
   path: ^1.8.1
+  # dynamic links
+  firebase_core: ^2.1.1
+  firebase_dynamic_links: ^5.0.4
 
 dev_dependencies:
   flutter_test:
