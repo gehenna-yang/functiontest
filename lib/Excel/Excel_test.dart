@@ -123,6 +123,7 @@ class _CreateExcelState extends State<CreateExcelStatefulWidget> {
     sheet.getRangeByName('G1').columnWidth = 15;
     sheet.getRangeByName('H1').columnWidth = 15;
 
+    // 읽어온 excel 값 다시 엑셀에 재작성
     for (var table in excel.tables.keys) {
       print(table); //sheet Name
       sheetname_list.add(table);
