@@ -10,6 +10,7 @@ import 'package:testfun_project/Share/Share_test.dart';
 import 'package:testfun_project/Youtube/YoutubeAppDemo.dart';
 import 'package:testfun_project/Youtube/YoutubePlayerPage.dart';
 import 'package:testfun_project/Youtube/YoutubeTest.dart';
+import 'package:testfun_project/qrcode/create_qrcode.dart';
 
 class FunctionMenu extends StatefulWidget {
 
@@ -57,16 +58,17 @@ class FunctionMenuState extends State<FunctionMenu> {
             width: full_w,
             child: Column(
               children: [
-                SizedBox(height: 30,),
-                Text("Test Function List", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),),
-                SizedBox(height: 20,),
+                const SizedBox(height: 30,),
+                const Text("Test Function List", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),),
+                const SizedBox(height: 20,),
                 Item("1. YouTubeThumnail", YoutubeTest()),
                 Item("2. YouTubeInfo", YoutubePlayerPage(videoId: "")),
                 Item("3. YouTubePlayer", YoutubeAppDemo()),
                 Item("4. Easy Image Viewer", Easy_Image_Viewer()),
-                Item("5. Share test", Share_test()),
-                Item("6. Excel test", CreateExcelStatefulWidget(title: "test excel")),
+                Item("5. Share test", const Share_test()),
+                Item("6. Excel test", const CreateExcelStatefulWidget(title: "test excel")),
                 Item("7. Dynamic test", Dynamiclinks_test()),
+                Item("8. Create QR Code", const CreateQR()),
               ],
             ),
           ),
