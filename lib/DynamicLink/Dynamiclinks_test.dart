@@ -167,7 +167,7 @@ class Dynamiclinks_testState extends State<Dynamiclinks_test> {
                       }
                     },
                     onLongPress: () {
-                      Clipboard.setData(ClipboardData(text: _linkMessage));
+                      // Clipboard.setData(ClipboardData(text: _linkMessage));
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Copied Link!')),
                       );
