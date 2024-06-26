@@ -6,7 +6,10 @@ import 'package:testfun_project/Config.dart';
 import 'package:testfun_project/DynamicLink/Dynamiclinks_test.dart';
 import 'package:testfun_project/Excel/Excel_test.dart';
 import 'package:testfun_project/Image/Easy_Image_Viewer.dart';
+import 'package:testfun_project/List/Sliver/SliverListsTest.dart';
 import 'package:testfun_project/Share/Share_test.dart';
+import 'package:testfun_project/SlideMenu/ShrinkSideMenuTest.dart';
+import 'package:testfun_project/SlideMenu/SliderdrawerTest.dart';
 import 'package:testfun_project/Youtube/YoutubeAppDemo.dart';
 import 'package:testfun_project/Youtube/YoutubePlayerPage.dart';
 import 'package:testfun_project/Youtube/YoutubeTest.dart';
@@ -69,6 +72,9 @@ class FunctionMenuState extends State<FunctionMenu> {
                 Item("6. Excel test", const CreateExcelStatefulWidget(title: "test excel")),
                 Item("7. Dynamic test", Dynamiclinks_test()),
                 Item("8. Create QR Code", const CreateQR()),
+                Item("9. SliverList", const SliverListsTest()),
+                Item("10. ShrinkSideMenu", ShrinkSideMenuTest(title: "ShrinkSideMenu",)),
+                Item("11. SliderDrawer", const SliderDrawerTest()),
               ],
             ),
           ),
@@ -79,13 +85,13 @@ class FunctionMenuState extends State<FunctionMenu> {
 
   Item(String page_name, StatefulWidget _fn){
     return Container(
-      padding: EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 10),
       child: InkWell(
         child: Container(
-          padding: EdgeInsets.only(left: 10),
+          padding: const EdgeInsets.only(left: 10),
           color: Colors.black12,
           width: full_w, height: 40, alignment: Alignment.centerLeft,
-          child: Text(page_name, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),),
+          child: Text(page_name, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 15),),
         ),
         onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (context) => _fn));
@@ -96,13 +102,13 @@ class FunctionMenuState extends State<FunctionMenu> {
 
   fun_Item(String page_name, Function? _fn){
     return Container(
-        padding: EdgeInsets.only(bottom: 10),
+        padding: const EdgeInsets.only(bottom: 10),
         child: InkWell(
           child: Container(
-            padding: EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 10),
             color: Colors.black12,
             width: full_w, height: 40, alignment: Alignment.centerLeft,
-            child: Text(page_name, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),),
+            child: Text(page_name, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 15),),
           ),
           onTap: (){
             if(_fn != null){
