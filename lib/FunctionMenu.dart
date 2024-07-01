@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:testfun_project/Charts/Fl_BarChart1.dart';
+import 'package:testfun_project/Charts/Fl_BarChart2.dart';
 import 'package:testfun_project/Config.dart';
 import 'package:testfun_project/DynamicLink/Dynamiclinks_test.dart';
 import 'package:testfun_project/Excel/Excel_test.dart';
@@ -75,6 +77,8 @@ class FunctionMenuState extends State<FunctionMenu> {
                 Item("9. SliverList", const SliverListsTest()),
                 Item("10. ShrinkSideMenu", ShrinkSideMenuTest(title: "ShrinkSideMenu",)),
                 Item("11. SliderDrawer", const SliderDrawerTest()),
+                Item("12. Fl Chart1", BarChartSample1()),
+                Item("13. Fl Chart2", BarChartSample2()),
               ],
             ),
           ),
