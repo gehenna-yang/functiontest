@@ -1,9 +1,10 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:testfun_project/Charts/color_extensions.dart';
 import 'package:testfun_project/Charts/resources/app_resources.dart';
 
 class _LineChart extends StatelessWidget {
-  const _LineChart({required this.isShowingMainData});
+  _LineChart({required this.isShowingMainData});
 
   final bool isShowingMainData;
 
@@ -29,14 +30,32 @@ class _LineChart extends StatelessWidget {
 
   LineChartData get sampleData2 => LineChartData(
     lineTouchData: lineTouchData2,
-    gridData: gridData,
+    extraLinesData: extraLinedata,
     titlesData: titlesData2,
     borderData: borderData,
     lineBarsData: lineBarsData2,
+    backgroundColor: Colors.white,
     minX: 0,
-    maxX: 14,
-    maxY: 6,
     minY: 0,
+    maxX: 14,
+    maxY: 10,
+  );
+
+  var hhh = HorizontalLine(
+    y: 5,
+    color: Colors.transparent,
+    label: HorizontalLineLabel(
+      show: true,
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      style: const TextStyle(fontSize: 10, color: Colors.lightBlue),
+      alignment: Alignment.topCenter,
+      direction: LabelDirection.horizontal,
+    )
+  );
+
+  ExtraLinesData get extraLinedata => ExtraLinesData(
+    extraLinesOnTop: true,
+    horizontalLines: [hhh],
   );
 
   LineTouchData get lineTouchData1 => LineTouchData(
@@ -68,7 +87,13 @@ class _LineChart extends StatelessWidget {
   ];
 
   LineTouchData get lineTouchData2 => const LineTouchData(
-    enabled: false,
+    enabled: true,
+    touchTooltipData: LineTouchTooltipData(
+      tooltipBorder: BorderSide(color: Colors.blueGrey),
+      tooltipPadding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      tooltipMargin: 10,
+      maxContentWidth: 220,
+    ),
   );
 
   FlTitlesData get titlesData2 => FlTitlesData(
@@ -95,28 +120,11 @@ class _LineChart extends StatelessWidget {
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(
       fontWeight: FontWeight.bold,
-      fontSize: 14,
+      color: Colors.white,
+      fontSize: 10,
     );
     String text;
-    switch (value.toInt()) {
-      case 1:
-        text = '1m';
-        break;
-      case 2:
-        text = '2m';
-        break;
-      case 3:
-        text = '3m';
-        break;
-      case 4:
-        text = '5m';
-        break;
-      case 5:
-        text = '6m';
-        break;
-      default:
-        return Container();
-    }
+    text = "${value.toInt()}m";
 
     return Text(text, style: style, textAlign: TextAlign.center);
   }
@@ -130,19 +138,23 @@ class _LineChart extends StatelessWidget {
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      fontSize: 10,
+      color: Colors.white
     );
     Widget text;
     switch (value.toInt()) {
       case 2:
-        text = const Text('SEPT', style: style);
+        text = const Text('H0001', style: style);
+        break;
+      case 3:
+        text = const Text('24.03.03', style: style);
         break;
       case 7:
-        text = const Text('OCT', style: style);
+        text = const Text('24.07.07', style: style);
         break;
       case 12:
-        text = const Text('DEC', style: style);
+        text = const Text('24.12.12', style: style);
         break;
       default:
         text = const Text('');
@@ -167,12 +179,11 @@ class _LineChart extends StatelessWidget {
 
   FlBorderData get borderData => FlBorderData(
     show: true,
-    border: Border(
-      bottom:
-      BorderSide(color: AppColors.primary.withOpacity(0.2), width: 4),
-      left: const BorderSide(color: Colors.transparent),
-      right: const BorderSide(color: Colors.transparent),
-      top: const BorderSide(color: Colors.transparent),
+    border: const Border(
+      bottom: BorderSide(color: Colors.amberAccent),
+      left: BorderSide(color: Colors.amberAccent),
+      right: BorderSide(color: Colors.transparent),
+      top: BorderSide(color: Colors.transparent),
     ),
   );
 
@@ -215,7 +226,7 @@ class _LineChart extends StatelessWidget {
   );
 
   LineChartBarData get lineChartBarData1_3 => LineChartBarData(
-    isCurved: true,
+    isCurved: false,
     color: AppColors.contentColorCyan,
     barWidth: 8,
     isStrokeCapRound: true,
@@ -250,11 +261,11 @@ class _LineChart extends StatelessWidget {
   );
 
   LineChartBarData get lineChartBarData2_2 => LineChartBarData(
-    isCurved: true,
+    isCurved: false,
     color: AppColors.contentColorPink.withOpacity(0.5),
-    barWidth: 4,
-    isStrokeCapRound: true,
-    dotData: const FlDotData(show: false),
+    barWidth: 3,
+    isStrokeCapRound: false,
+    dotData: const FlDotData(show: true),
     belowBarData: BarAreaData(
       show: true,
       color: AppColors.contentColorPink.withOpacity(0.2),
@@ -270,10 +281,11 @@ class _LineChart extends StatelessWidget {
   );
 
   LineChartBarData get lineChartBarData2_3 => LineChartBarData(
-    isCurved: true,
+    isCurved: false,
     curveSmoothness: 0,
     color: AppColors.contentColorCyan.withOpacity(0.5),
     barWidth: 2,
+    show: true, // show 조절로 그래프 표현 유무 설정
     isStrokeCapRound: true,
     dotData: const FlDotData(show: true),
     belowBarData: BarAreaData(show: false),
@@ -307,37 +319,33 @@ class LineChartSample1State extends State<LineChartSample1> {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1.23,
-      child: Stack(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              const SizedBox(
-                height: 37,
-              ),
-              const Text(
-                'Monthly Sales',
-                style: TextStyle(
-                  color: AppColors.primary,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 2,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(
-                height: 37,
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 16, left: 6),
-                  child: _LineChart(isShowingMainData: isShowingMainData),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-            ],
+          const SizedBox(
+            height: 37,
+          ),
+          const Text(
+            'Chart Test',
+            style: TextStyle(
+              color: AppColors.primary,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 16, left: 6),
+              child: _LineChart(isShowingMainData: isShowingMainData),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
           ),
           IconButton(
             icon: Icon(
