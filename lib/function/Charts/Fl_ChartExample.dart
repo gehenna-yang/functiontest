@@ -8,19 +8,19 @@ import 'package:testfun_project/function/Charts/Fl_LineChart5.dart';
 import 'package:testfun_project/function/Charts/Fl_LineChart9.dart';
 import 'package:testfun_project/function/Charts/Fl_RadarChart.dart';
 
-class Fl_ChartTest extends StatefulWidget {
-  const Fl_ChartTest({super.key});
+class Fl_ChartTestList extends StatefulWidget {
+  const Fl_ChartTestList({super.key});
 
   @override
-  State<Fl_ChartTest> createState() => _Fl_ChartTestState();
+  State<Fl_ChartTestList> createState() => _Fl_ChartTestListState();
 }
 
-class _Fl_ChartTestState extends State<Fl_ChartTest> {
+class _Fl_ChartTestListState extends State<Fl_ChartTestList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fl_Chart List Page', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),),
+        title: const Text('Fl_Chart Test Page', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
