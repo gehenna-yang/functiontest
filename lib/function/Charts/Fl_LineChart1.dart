@@ -8,14 +8,14 @@ class _LineChart extends StatelessWidget {
 
   final bool isShowingMainData;
 
-  static List<int> showingTooltipOnSpots = [1,2,3,4,5,6];
+  static List<int> showingTooltipOnSpots = [0,1,2,3,4,5];
 
   static List<FlSpot> get allSpots => const [
     FlSpot(1, 1),
     FlSpot(3, 2.8),
-    FlSpot(7, 1.2),
-    FlSpot(10, 2.8),
-    FlSpot(12, 2.6),
+    FlSpot(5, 1.2),
+    FlSpot(7, 2.8),
+    FlSpot(10, 2.6),
     FlSpot(13, 3.9),
   ];
 
@@ -56,24 +56,22 @@ class _LineChart extends StatelessWidget {
     backgroundColor: Colors.white,
     minX: 0,
     minY: 0,
-    maxX: 14,
+    maxX: 20,
     maxY: 10,
   );
 
   LineTouchData get lineTouchData1 => LineTouchData(
     enabled: true,
     touchTooltipData: LineTouchTooltipData( // touch spot tooltip
-      getTooltipColor: (touchedSpot) => Colors.transparent,
-      tooltipBorder: const BorderSide(color: Colors.transparent),
+      getTooltipColor: (touchedSpot) => Colors.blueGrey,
+      tooltipBorder: const BorderSide(color: Colors.orange),
       getTooltipItems: (List<LineBarSpot> lineBarsSpot) {
         return lineBarsSpot.map((lineBarSpot) {
-          print('bar color ${lineBarSpot.bar.color}');
-          var color = lineBarSpot.bar.color;
           return LineTooltipItem(
             lineBarSpot.y.toString(),
             TextStyle(
               fontSize: 14,
-              color: color,
+              color: lineBarSpot.bar.color,
               fontWeight: FontWeight.w600,
               decoration: TextDecoration.none,
             ),
@@ -171,7 +169,7 @@ class _LineChart extends StatelessWidget {
   SideTitles leftTitles() => SideTitles(
     getTitlesWidget: leftTitleWidgets,
     showTitles: true,
-    interval: 1,
+    interval: 5,
     reservedSize: 40,
   );
 
@@ -184,11 +182,14 @@ class _LineChart extends StatelessWidget {
     );
     Widget text;
     switch (value.toInt()) {
+      case 1:
+        text = const Text('H1', style: style);
+        break;
       case 2:
-        text = const Text('H0001', style: style);
+        text = const Text('H2', style: style);
         break;
       case 3:
-        text = const Text('24.03.03', style: style);
+        text = const Text('H3', style: style);
         break;
       case 7:
         text = const Text('24.07.07', style: style);

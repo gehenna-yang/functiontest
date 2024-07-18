@@ -32,7 +32,7 @@ class _Fl_ChartTestListState extends State<Fl_ChartTestList> {
               Item(context, "1. Fl BarChart1", BarChartSample1()),
               Item(context, "2. Fl BarChart2", BarChartSample2()),
               Item(context, "3. Fl LineChart1", const LineChartSample1()),
-              Item(context, "4. Fl LineChart5", LineChartSample5()),
+              Item(context, "4. Fl LineChart5", const LineChartSample5()),
               Item(context, "5. Fl LineChart9", LineChartSample9()),
               Item(context, "6. Fl RadarChart1", RadarChartSample1()),
             ],
