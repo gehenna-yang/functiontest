@@ -1,8 +1,8 @@
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:testfun_project/Charts/color_extensions.dart';
-import 'package:testfun_project/Charts/resources/app_resources.dart';
+import 'package:testfun_project/function/Charts/color_extensions.dart';
+import 'package:testfun_project/function/Charts/resources/app_resources.dart';
 import 'package:testfun_project/Config.dart';
 
 class RadarChartSample1 extends StatefulWidget {

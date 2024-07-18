@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:testfun_project/Charts/resources/app_resources.dart';
+import 'package:testfun_project/function/Charts/resources/app_resources.dart';
 
 // ignore: must_be_immutable
 class LineChartSample9 extends StatefulWidget {
