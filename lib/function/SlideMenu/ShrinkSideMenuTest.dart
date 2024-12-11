@@ -87,7 +87,7 @@ class _ShrinkSideMenuTestState extends State<ShrinkSideMenuTest> {
                   ),
                   Text(
                     '$_counter',
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ],
               ),
@@ -168,7 +168,7 @@ class _ShrinkSideMenuTestState extends State<ShrinkSideMenuTest> {
           ListTile(
             onTap: () {},
             leading:
-            const Icon(Icons.star_border, size: 20.0, color: Colors.white),
+                const Icon(Icons.star_border, size: 20.0, color: Colors.white),
             title: const Text("Favorites"),
             textColor: Colors.white,
             dense: true,
@@ -178,7 +178,7 @@ class _ShrinkSideMenuTestState extends State<ShrinkSideMenuTest> {
           ListTile(
             onTap: () {},
             leading:
-            const Icon(Icons.settings, size: 20.0, color: Colors.white),
+                const Icon(Icons.settings, size: 20.0, color: Colors.white),
             title: const Text("Settings"),
             textColor: Colors.white,
             dense: true,
