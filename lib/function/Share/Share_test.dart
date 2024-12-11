@@ -1,15 +1,11 @@
-
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart'
     hide XFile; // hides to test if share_plus exports XFile
-import 'package:file_selector/file_selector.dart'
-    hide XFile;
+import 'package:file_selector/file_selector.dart' hide XFile;
 import 'package:share_plus/share_plus.dart'; // hides to test if share_plus exports XFile
-
 
 class Share_test extends StatefulWidget {
   const Share_test({Key? key}) : super(key: key);
@@ -171,7 +167,7 @@ class Share_testState extends State<Share_test> {
   void _onShareWithResult(BuildContext context) async {
     final box = context.findRenderObject() as RenderBox?;
     final scaffoldMessenger = ScaffoldMessenger.of(context);
-    ShareResult result;
+    ShareResult? result;
     if (imagePaths.isNotEmpty) {
       final files = <XFile>[];
       for (var i = 0; i < imagePaths.length; i++) {
@@ -181,13 +177,13 @@ class Share_testState extends State<Share_test> {
           text: text,
           subject: subject,
           sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size);
-    } else {
-      result = await Share.shareWithResult(text,
-          subject: subject,
-          sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size);
+      // } else {
+      // result = await Share.shareWithResult(text,
+      //     subject: subject,
+      //     sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size);
     }
     scaffoldMessenger.showSnackBar(SnackBar(
-      content: Text("Share result: ${result.status}"),
+      content: Text("Share result: ${result?.status}"),
     ));
   }
 

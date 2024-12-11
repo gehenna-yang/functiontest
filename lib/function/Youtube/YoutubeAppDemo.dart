@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:testfun_project/Config.dart';
@@ -23,15 +21,15 @@ class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
         showFullscreenButton: false,
         loop: false,
       ),
-    )
-      ..onInit = () {
-        // _controller.loadVideo("https://www.youtube.com/shorts/y6DkNPEA488");
-        // _controller.loadVideo("https://www.youtube.com/watch?v=c3ThTZz1DBw");
-        _controller.loadVideo("https://www.youtube.com/watch?v=y6DkNPEA488");
-      }
-      ..onFullscreenChange = (isFullScreen) {
-        print('${isFullScreen ? 'Entered' : 'Exited'} Fullscreen.');
-      };
+    );
+    // ..onInit = () {
+    //   // _controller.loadVideo("https://www.youtube.com/shorts/y6DkNPEA488");
+    //   // _controller.loadVideo("https://www.youtube.com/watch?v=c3ThTZz1DBw");
+    //   _controller.loadVideo("https://www.youtube.com/watch?v=y6DkNPEA488");
+    // }
+    // ..onFullscreenChange = (isFullScreen) {
+    //   print('${isFullScreen ? 'Entered' : 'Exited'} Fullscreen.');
+    // };
   }
 
   @override
@@ -46,13 +44,14 @@ class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
           // ),
           body: LayoutBuilder(
             builder: (context, constraints) {
-
               return Container(
-                width: full_w, height: full_h-40,
+                width: full_w,
+                height: full_h - 40,
                 child: Stack(
                   children: [
                     Container(
-                      width: full_w, height: full_h-40,
+                      width: full_w,
+                      height: full_h - 40,
                       child: player,
                     ),
                   ],

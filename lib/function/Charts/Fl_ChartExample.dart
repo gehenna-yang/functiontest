@@ -20,7 +20,11 @@ class _Fl_ChartTestListState extends State<Fl_ChartTestList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fl_Chart Test Page', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),),
+        centerTitle: true,
+        title: const Text(
+          'Fl_Chart Test List Page',
+          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
+        ),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
