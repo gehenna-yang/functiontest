@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testfun_project/Config.dart';
 import 'package:testfun_project/common/Widgets.dart';
+import 'package:testfun_project/function/Button/CircularMenuButton.dart';
+import 'package:testfun_project/function/Button/PieMenuButton.dart';
+import 'package:testfun_project/function/Button/PopupMenuButton.dart';
 
 class ButtonTestList extends StatefulWidget {
   const ButtonTestList({super.key});
@@ -27,7 +30,11 @@ class _ButtonTestListState extends State<ButtonTestList> {
           width: full_w,
           child: Column(
             children: [
-              // Item(context, "1. Fl BarChart1", BarChartSample1()),
+              Item(
+                  context, "1. CircularMenuButton", const CircularMenuButton()),
+              Item(context, "2. Pie Menu", const PieMenuButton()),
+              Item(context, "2. Popup Menu",
+                  const PopUpMenuButton(title: 'PopUp Menu')),
             ],
           ),
         ),
