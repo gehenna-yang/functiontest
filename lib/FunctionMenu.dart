@@ -8,6 +8,7 @@ import 'package:testfun_project/function/DynamicLink/Dynamiclinks_test.dart';
 import 'package:testfun_project/function/Excel/Excel_test.dart';
 import 'package:testfun_project/function/Image/Easy_Image_Viewer.dart';
 import 'package:testfun_project/function/List/Sliver/SliverListsTest.dart';
+import 'package:testfun_project/function/Lottie/LottieList.dart';
 import 'package:testfun_project/function/Share/Share_test.dart';
 import 'package:testfun_project/function/SlideMenu/ShrinkSideMenuTest.dart';
 import 'package:testfun_project/function/SlideMenu/SliderdrawerTest.dart';
@@ -81,6 +82,8 @@ class FunctionMenuState extends State<FunctionMenu> {
                       const Fl_ChartTestList()),
                   Item(context, '11. Button Test List Page',
                       const ButtonTestList()),
+                  Item(
+                      context, '12. Lottie Test List Page', const LottieList()),
                 ],
               ),
             ),
