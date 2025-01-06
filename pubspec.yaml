@@ -71,6 +71,8 @@ dependencies:
   popup_menu_plus: ^0.0.6
   # lottie
   lottie: ^3.0.0
+  # slider
+  another_xlider: ^3.0.2
 
 dev_dependencies:
   flutter_test:
