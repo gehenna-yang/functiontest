@@ -1,6 +1,9 @@
+import 'package:camera/camera.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:testfun_project/FunctionMenu.dart';
+
+List<CameraDescription> _cameras = <CameraDescription>[];
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

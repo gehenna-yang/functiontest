@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:testfun_project/common/Widgets.dart';
 import 'package:testfun_project/function/Button/ButtonTestList.dart';
+import 'package:testfun_project/function/Camera/TestCustomCamera.dart';
 import 'package:testfun_project/function/Charts/Fl_ChartExample.dart';
 import 'package:testfun_project/Config.dart';
 import 'package:testfun_project/function/DynamicLink/Dynamiclinks_test.dart';
@@ -89,6 +90,7 @@ class FunctionMenuState extends State<FunctionMenu> {
                   Item(context, '11. Button Test List', const ButtonTestList()),
                   Item(context, '12. Lottie Test List', const LottieList()),
                   Item(context, '13. Slider Test List', const Sliderlist()),
+                  Item(context, '14. Custom Camera Test', const CameraApp()),
                 ],
               ),
             ),
