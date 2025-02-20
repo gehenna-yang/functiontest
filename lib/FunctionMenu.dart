@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:testfun_project/common/Widgets.dart';
 import 'package:testfun_project/function/Button/ButtonTestList.dart';
+import 'package:testfun_project/function/Calendar/TableCalendarTest.dart';
 import 'package:testfun_project/function/Camera/TestCustomCamera.dart';
 import 'package:testfun_project/function/Charts/Fl_ChartExample.dart';
 import 'package:testfun_project/Config.dart';
@@ -15,6 +16,7 @@ import 'package:testfun_project/function/SlideMenu/ShrinkSideMenuTest.dart';
 import 'package:testfun_project/function/SlideMenu/SliderdrawerTest.dart';
 import 'package:testfun_project/function/Slider/SliderList.dart';
 import 'package:testfun_project/function/Youtube/YoutubeTestExample.dart';
+import 'package:testfun_project/function/hotspot/hotSpotTest.dart';
 import 'package:testfun_project/function/qrcode/create_qrcode.dart';
 
 class FunctionMenu extends StatefulWidget {
@@ -85,12 +87,21 @@ class FunctionMenuState extends State<FunctionMenu> {
                     ShrinkSideMenuTest(title: "ShrinkSideMenu"),
                   ),
                   Item(context, "9. SliderDrawer", const SliderDrawerTest()),
-                  Item(context, "10. Fl_Chart Test List",
-                      const Fl_ChartTestList()),
+                  Item(
+                    context,
+                    "10. Fl_Chart Test List",
+                    const Fl_ChartTestList(),
+                  ),
                   Item(context, '11. Button Test List', const ButtonTestList()),
                   Item(context, '12. Lottie Test List', const LottieList()),
                   Item(context, '13. Slider Test List', const Sliderlist()),
                   Item(context, '14. Custom Camera Test', const CameraApp()),
+                  Item(context, '15. HotSpot Test', const FlutterWifiIoT()),
+                  Item(
+                    context,
+                    '16. Table Calendar Test',
+                    const TableCalendarTest(),
+                  ),
                 ],
               ),
             ),
